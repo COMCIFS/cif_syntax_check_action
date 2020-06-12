@@ -21,6 +21,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: syntax
-        uses: actions/cif_syntax_check_action
+        uses: cif_syntax_check_action@master
         with:
             cif-file: ./test.cif
