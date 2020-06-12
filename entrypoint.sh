@@ -5,7 +5,7 @@
 git clone https://github.com/COMCIFS/cif_api cif_api
 cd cif_api
 ./configure
-make
+make install
 
 gcc -o cif_syncheck -I./src -L./src/.libs -licuio -lcif src/examples/syncheck.c
 
