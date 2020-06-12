@@ -1,0 +1,4 @@
+# A CIF file to test that the action works
+data_testblock
+_one_dataname 123
+_one_more_dataname "hello world"
