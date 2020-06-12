@@ -1,0 +1,16 @@
+name: 'CIF syntax check'
+description: 'Check the supplied file conforms to CIF syntax'
+inputs:
+        cif-file:
+                description: 'File to check'
+                required: true
+
+outputs:
+        result:
+                description: 'Result of syntax check'
+
+runs:
+        using: 'docker'
+        image: 'Dockerfile'
+        args:
+                - ${{ inputs.cif-file }}
