@@ -7,7 +7,7 @@ cd cif_api
 ./configure
 make
 
-gcc -o cif_syncheck -I./src -L./src/.libs -licuio src/examples/syncheck.c
+gcc -o cif_syncheck -I./src -L./src/.libs -licuio -lcif src/examples/syncheck.c
 
 chmod a+x cif_syncheck
 
