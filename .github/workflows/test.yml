@@ -1,12 +1,19 @@
 # A test workflow to make sure the action works
 
-name: ActionTest
+name: CIFSyntaxCheck
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
     branches: [ master ]
+    
+  workflow_dispatch:
+    inputs: 
+      filename:
+        description: "File for CIF syntax checking"
+        required: true
+    
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,8 +27,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: checkout
         uses: actions/checkout@v2
-      - name: syntax
+      - name: one_file_syntax
+        if: ${{ github.event_name == 'workflow_dispatch' }}
         uses: ./
         id: cif_syntax_check_action
         with:
-            cif-file: ./test.cif
+            cif-file: ${{ github.event.inputs.filename }}
