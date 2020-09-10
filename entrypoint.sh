@@ -13,5 +13,10 @@ chmod a+x cif_syncheck
 
 # run the checks
 popd
-LD_LIBRARY_PATH=./cif_api/src/.libs ./cif_api/cif_syncheck $1
+
+shopt -s nullglob
+for file in ./*.{cif,dic}
+do	
+LD_LIBRARY_PATH=./cif_api/src/.libs ./cif_api/cif_syncheck $file
+done
 
