@@ -28,8 +28,5 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: one_file_syntax
-        if: ${{ github.event_name == 'workflow_dispatch' }}
         uses: ./
         id: cif_syntax_check_action
-        with:
-            cif-file: ${{ github.event.inputs.filename }}
