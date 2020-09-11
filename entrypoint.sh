@@ -17,6 +17,8 @@ popd
 shopt -s nullglob
 for file in ./*.{cif,dic}
 do	
-LD_LIBRARY_PATH=./cif_api/src/.libs ./cif_api/cif_syncheck $file
+if !( LD_LIBRARY_PATH=./cif_api/src/.libs ./cif_api/cif_syncheck $file )
+then echo "Failure"; exit 1;
+fi
 done
 
