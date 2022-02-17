@@ -15,8 +15,10 @@ chmod a+x cif_syncheck
 popd
 
 shopt -s nullglob
+echo "Checking directory $1"
 for file in $1/*.{cif,dic}
 do	
+echo "Checking $file"
 if !( LD_LIBRARY_PATH=./cif_api/src/.libs ./cif_api/cif_syncheck $file )
 then echo "Failure"; exit 1;
 fi
