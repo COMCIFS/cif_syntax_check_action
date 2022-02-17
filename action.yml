@@ -1,5 +1,10 @@
 name: 'CIF syntax check'
 description: 'Check that all *.cif/*.dic files in the top-level directory conform to CIF syntax'
+inputs:
+    check-directory:
+      description: 'Directory to check'
+      default: '.'
+      
 outputs:
         result:
                 description: 'Result of syntax check'
