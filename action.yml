@@ -12,4 +12,5 @@ outputs:
 runs:
         using: 'docker'
         image: 'Dockerfile'
-        args: ${{ inputs.check-directory }}
+        args: 
+         - ${{ inputs.check-directory }}
